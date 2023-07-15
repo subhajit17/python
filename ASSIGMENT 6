@@ -1,0 +1,36 @@
+1. What are escape characters, and how do you use them?
+Escape characters are special characters that are used to represent certain actions or characters that cannot be directly inserted into a string. They are prefixed with a backslash `\`. To use an escape character, you place it before the character you want to insert or the action you want to perform.
+
+2. What do the escape characters `\n` and `\t` stand for?
+The escape character `\n` represents a newline character, which is used to insert a line break or start a new line within a string. The escape character `\t` represents a tab character, which is used to insert horizontal tab indentation within a string.
+
+3. What is the way to include backslash characters in a string?
+To include a backslash character `\` in a string, you need to escape it by using a double backslash `\\`. For example, if you want to include the character `\` in a string, you would write it as `'\\'`.
+
+4. The string "Howl's Moving Castle" is a correct value. Why isn't the single quote character in the word "Howl's" escaped a problem?
+In Python, you can use either single quotes or double quotes to define a string. In this case, the string is defined using double quotes, so the single quote character within the word "Howl's" does not need to be escaped. Python allows you to include single quotes within a string delimited by double quotes without any issues.
+
+5. How do you write a string of newlines if you don't want to use the `\n` character?
+If you don't want to use the `\n` character to represent newlines, you can use triple quotes `'''` or `"""` to define a multiline string. By using triple quotes and pressing Enter to create newlines within them, you can write a string that spans multiple lines without the need for explicit newline characters.
+
+6. What are the values of the given expressions?
+- `'Hello, world!'[1]` returns the character `'e'`, as indexing starts from 0 and the character at index 1 is `'e'`.
+- `'Hello, world!'[0:5]` returns the substring `'Hello'`, as it extracts the characters from index 0 to index 4 (5 is excluded).
+- `'Hello, world!'[:5]` also returns the substring `'Hello'`, as omitting the start index defaults to 0.
+- `'Hello, world!'[3:]` returns the substring `'lo, world!'`, as omitting the end index includes all characters from index 3 to the end of the string.
+
+7. What are the values of the following expressions?
+- `'Hello'.upper()` returns the string `'HELLO'`, as the `upper()` method converts all characters in the string to uppercase.
+- `'Hello'.upper().isupper()` returns the boolean value `True`, as the `isupper()` method checks if all characters in the string are uppercase. In this case, they are, so the result is `True`.
+- `'Hello'.upper().lower()` returns the string `'hello'`, as the `lower()` method converts all characters in the string to lowercase after converting it to uppercase.
+
+8. What are the values of the following expressions?
+- `'Remember, remember, the fifth of July.'.split()` returns a list of strings `['Remember,', 'remember,', 'the', 'fifth', 'of', 'July.']`, where each word is an element in the list.
+- `'-'.join('There can only one.'.split())` splits the string at whitespace characters, resulting in a list of strings `['There', 'can', 'only', 'one.']`. The `join()` method concatenates these strings with a hyphen `-` as the separator, resulting in the string `'There-can-only-one.'`.
+
+9. The methods for right-justifying, left-justifying, and centering a string are as follows:
+- Right-justifying: Use the `rjust()` method, which right-aligns the string within a field of a specified width by padding it with spaces (or a specified character) on the left.
+- Left-justifying: Use the `ljust()` method, which left-aligns the string within a field of a specified width by padding it with spaces (or a specified character) on the right.
+- Centering: Use the `center()` method, which centers the string within a field of a specified width by padding it with spaces (or a specified character) on both sides.
+
+10. The best way to remove whitespace characters from the start or end of a string is to use the `strip()` method. The `strip()` method removes leading and trailing whitespace characters (spaces, tabs, etc.) from a string, leaving the content intact.
