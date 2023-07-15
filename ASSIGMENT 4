@@ -1,0 +1,48 @@
+1. `[]` is an empty list in Python. It represents a collection of items enclosed within square brackets, but in this case, it doesn't contain any elements.
+
+2. To assign the value 'hello' as the third value in the list stored in the variable `spam`, you can use the index notation and assignment operator:
+   ```python
+   spam[2] = 'hello'
+   ```
+
+3. The value of `spam[int(int('3' * 2) / 11)]` is `'d'`. Here's the breakdown:
+   - `'3' * 2` results in the string `'33'`.
+   - `int('33')` converts the string to an integer value of `33`.
+   - `33 / 11` performs integer division, resulting in `3`.
+   - `spam[3]` corresponds to the fourth element in the list, which is `'d'`.
+
+4. The value of `spam[-1]` is `'d'`. Negative indices in Python represent counting from the end of the list, so `-1` refers to the last element in the list.
+
+5. The value of `spam[:2]` is `['a', 'b']`. This is known as list slicing. It extracts a sublist from index 0 (inclusive) up to index 2 (exclusive), capturing the first two elements of the list.
+
+6. The value of `bacon.index('cat')` is `1`. The `index()` method returns the index of the first occurrence of the specified value in the list. In this case, the string `'cat'` is found at index 1.
+
+7. After `bacon.append(99)`, the list value in `bacon` becomes `[3.14, 'cat', 11, 'cat', True, 99]`. The `append()` method adds the specified element to the end of the list.
+
+8. After `bacon.remove('cat')`, the list value in `bacon` becomes `[3.14, 11, 'cat', True]`. The `remove()` method removes the first occurrence of the specified element from the list. In this case, it removes the string `'cat'`.
+
+9. The list concatenation operator is `+`, which combines two lists into a new list. The list replication operator is `*`, which replicates a list a specified number of times.
+
+10. The `append()` method is used to add an element to the end of a list. It does not require specifying an index. The `insert()` method, on the other hand, allows you to insert an element at a specific index within the list.
+
+11. The two methods for removing items from a list are:
+    - The `remove()` method, which removes the first occurrence of a specific value from the list.
+    - The `pop()` method, which removes and returns the element at a specified index. If no index is provided, it removes and returns the last element.
+
+12. List values and string values are identical in the sense that both can be indexed and sliced. They are both ordered sequences of elements. However, lists are mutable (can be changed), while strings are immutable (cannot be changed once created).
+
+13. Tuples and lists are both sequence data types in Python, but they have the following differences:
+    - Lists are mutable, meaning you can change their elements, add new elements, or remove existing elements. Tuples, on the other hand, are immutable and their elements cannot be modified after creation.
+    - Lists are defined using square brackets (`[]`), while tuples are defined using parentheses (`()`).
+    - Lists have several methods, such as `append()`, `insert()`, and `remove()`, which can modify the list. Tuples have fewer methods and are more focused on accessing and working with the data they contain.
+
+14. To create a tuple value that only contains the integer `42`, you can use parentheses:
+    ```python
+    my_tuple = (42,)
+    ```
+
+15. To get a list value's tuple form, you can use the `tuple()` function, passing the list as an argument. To get a tuple value's list form, you can use the `list()` function, passing the tuple as an argument.
+
+16. Variables that "contain" list values are actually referencing the list objects. In Python, variables store references to objects rather than the objects themselves. So a variable that appears to contain a list is actually pointing to the memory address where the list is stored.
+
+17. `copy.copy()` creates a shallow copy of an object, including any objects it contains. However, if the object being copied contains other mutable objects (like lists), the copy still refers to the original objects. In contrast, `copy.deepcopy()` creates a deep copy of an object, recursively copying all objects it contains, so that the copied object and its contents are completely independent of the original object.
