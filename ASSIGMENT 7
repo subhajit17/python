@@ -66,3 +66,62 @@ To make a regular expression case-insensitive, you can pass the `re.IGNORECASE` 
 The `.` character in a regular expression normally matches any character except a newline character. It matches alphanumeric characters, symbols, whitespace characters, and so on.
 
 If `re.DOTALL` is passed as the
+
+ second argument to `re.compile()`, the `.` character will also match newline characters. The `re.DOTALL` flag enables the dot to match all characters, including newline characters.
+
+18. If `numReg = re.compile(r'\d+')`, what will `numRegex.sub('X', '11 drummers, 10 pipers, five rings, 4 hens')` return?
+The expression `numRegex.sub('X', '11 drummers, 10 pipers, five rings, 4 hens')` will return the string `'X drummers, X pipers, five rings, X hens'`. The `sub()` method of the `re` module substitutes all occurrences of the pattern matched by `numRegex` (which is one or more digits) with the string `'X'`.
+
+19. What does passing `re.VERBOSE` as the second argument to `re.compile()` allow you to do?
+Passing `re.VERBOSE` as the second argument to `re.compile()` allows you to write regular expressions in a more readable and organized manner. It enables the use of whitespace and comments within the pattern to improve its clarity. The `re.VERBOSE` flag ignores whitespace characters (except within character classes) and allows comments starting with `#` to be used within the regex pattern.
+
+20. How would you write a regex that matches a number with commas for every three digits? It must match the given following:
+- '42'
+- '1,234'
+- '6,368,745'
+
+but not the following:
+- '12,34,567' (which has only two digits between the commas)
+- '1234' (which lacks commas)
+
+To match numbers with commas for every three digits, you can use the following regex pattern: `r'^\d{1,3}(,\d{3})*$'`. This pattern matches:
+- `^\d{1,3}`: Start of the string followed by 1 to 3 digits.
+- `(,\d{3})*`: Zero or more occurrences of a comma followed by exactly 3 digits.
+- `$`: End of the string.
+
+21. How would you write a regex that matches the full name of someone whose last name is Watanabe? You can assume that the first name that comes before it will always be one word that begins with a capital letter. The regex must match the following:
+- 'Haruto Watanabe'
+- 'Alice Watanabe'
+- 'RoboCop Watanabe'
+
+but not the following:
+- 'haruto Watanabe' (where the first name is not capitalized)
+- 'Mr. Watanabe' (where the preceding word has a non-letter character)
+- 'Watanabe' (which has no first name)
+- 'Haruto watanabe' (where Watanabe is not capitalized)
+
+To match the full name of someone whose last name is Watanabe, you can use the following regex pattern: `r'[A-Z][a-zA-Z]*\sWatanabe'`. This pattern matches:
+- `[A-Z]`: A capital letter as the first character.
+- `[a-zA-Z]*`: Zero or more lowercase or uppercase letters as the first name.
+- `\s`: A whitespace character to separate the first and last names.
+- `Watanabe`: The literal string "Watanabe" as the last name.
+
+22. How would you write a regex that matches a sentence where the first word is either Alice, Bob, or Carol; the second word is either eats, pets, or throws; the third word is apples, cats, or baseballs; and the sentence ends with a period? This regex should be case-insensitive. It must match the following:
+- 'Alice eats apples.'
+- 'Bob pets cats.'
+- 'Carol throws baseballs.'
+- 'Alice throws Apples.'
+- 'BOB EATS CATS.'
+
+but not the following:
+- 'RoboCop eats apples.'
+- 'ALICE THROWS FOOTBALLS.'
+- 'Carol eats 7 cats.'
+
+To match the described sentence, you can use the following regex pattern: `r'^(Alice|Bob|Carol)\s(eats|pets|throws)\s(apples|cats|baseballs)\.$'` with the `re.IGNORECASE` flag. This pattern matches:
+- `^`: Start of the string.
+- `(Alice|Bob|Carol)`: Either "Alice", "Bob", or "Carol" as the first word.
+- `\s`: A whitespace character to separate the words.
+- `(eats|pets|throws)`: Either "eats", "pets", or "throws" as the second word.
+- `(apples|cats|baseballs)`: Either "apples", "cats", or "baseballs" as the third word.
+- `\.`: A period character as the end of the sentence.
