@@ -1,0 +1,68 @@
+1. What is the name of the feature responsible for generating Regex objects?
+The feature responsible for generating Regex objects is the `re` module in Python, which provides support for regular expressions.
+
+2. Why do raw strings often appear in Regex objects?
+Raw strings (denoted by the `r` prefix) are often used in Regex objects to avoid unwanted interpretation of backslashes. Regular expressions often contain backslashes that have special meanings. By using raw strings, backslashes are treated as literal characters, making it easier to write and read regular expressions.
+
+3. What is the return value of the search() method?
+The `search()` method returns a match object if a match is found, or `None` if no match is found. The match object contains information about the match, such as the matched string, its starting and ending positions, and any captured groups.
+
+4. From a Match item, how do you get the actual strings that match the pattern?
+To get the actual strings that match the pattern from a `Match` object, you can use the `group()` method. Calling `group()` without any arguments returns the entire matched string. You can also use the `group()` method with an argument to specify a particular captured group within the match.
+
+5. In the regex created from the `r'(\d\d\d)-(\d\d\d-\d\d\d\d)'`, what does group zero cover? Group 2? Group 1?
+In the given regex `r'(\d\d\d)-(\d\d\d-\d\d\d\d)'`:
+- Group 0 covers the entire matched string, including both the three-digit number and the hyphenated number.
+- Group 1 covers the first three-digit number captured by the parentheses `(\d\d\d)`.
+- Group 2 covers the second hyphenated number captured by the parentheses `(\d\d\d-\d\d\d\d)`.
+
+6. In standard expression syntax, parentheses and intervals have distinct meanings. How can you tell a regex that you want it to fit real parentheses and periods?
+To indicate that parentheses and periods should be treated as literal characters in a regex, you can use a backslash `\` to escape them. For example, to match a literal opening and closing parentheses, you would use `\( \)`. Similarly, to match a literal period, you would use `\.`.
+
+7. The `findall()` method returns a string list or a list of string tuples. What causes it to return one of the two options?
+The `findall()` method returns a list of all non-overlapping matches of a pattern in a string. It returns a list of strings if the pattern does not contain any capturing groups. However, if the pattern contains one or more capturing groups (specified using parentheses), it returns a list of string tuples, where each tuple represents a match and contains the captured groups.
+
+8. In standard expressions, what does the `|` character mean?
+In standard regular expressions, the `|` character acts as a logical OR operator. It is used to specify alternatives within a pattern. It allows you to match either the expression before the `|` or the expression after it. For example, the pattern `cat|dog` matches either "cat" or "dog".
+
+9. In regular expressions, what does the `\w` character stand for?
+In regular expressions, the `\w` character represents a shorthand character class for word characters. It matches any alphanumeric character (a-z, A-Z, 0-9) and the underscore `_`. It is equivalent to `[a-zA-Z0-9_]`.
+
+10. In regular expressions, what is the difference between the `+` and `*` characters?
+In regular expressions, the `+` character matches one or more occurrences of the preceding element. It requires the element to appear at least once. For example, `a+` matches one or more "a" characters.
+
+On the other hand, the `*` character matches zero or more occurrences of the preceding element. It allows the element to appear any number of times, including zero. For example, `a*` matches zero or more "a" characters.
+
+11. What is the difference between `{4}` and `{4,5}` in a regular expression?
+In a regular expression, `{4}` specifies that the preceding element should occur exactly four times. For example, `a{4}` matches "aaaa".
+
+On the other hand, `{4,5}` specifies a range that the preceding element can occur. It means the preceding element should occur between four and five times (inclusive). For example, `a{4,5}` matches either "aaaa" or "aaaaa".
+
+12. What do you mean by the `\d`, `\w`, and `\s` shorthand character classes signify in regular expressions?
+In regular expressions:
+- `\d` represents a shorthand character class for digits. It matches any decimal digit from 0 to 9.
+- `\w` represents a shorthand character class for word characters. It matches any alphanumeric character (a-z, A-Z, 0-9) and the underscore `_`.
+- `\s` represents a shorthand character class for whitespace characters. It matches any whitespace character, including spaces, tabs, and newline characters.
+
+13. What do the `\D`, `\W`, and `\S` shorthand character classes signify in regular expressions?
+In regular expressions:
+- `\D` represents the negation of the `\d` shorthand character class. It matches any character that is not a digit.
+- `\W` represents the negation of the `\w` shorthand character class. It matches any character that is not a word character (non-alphanumeric and non-underscore).
+- `\S` represents the negation of the `\s` shorthand character class. It matches any character that is not a whitespace character.
+
+14. What is the difference between `.*?` and `.*` in regular expressions?
+In regular expressions, `.*?` is a non-greedy quantifier, while `.*` is a greedy quantifier. 
+
+- `.*?` matches zero or more occurrences of any character (except newline) in a non-greedy manner. It matches as few characters as possible to satisfy the overall pattern. 
+- `.*` matches zero or more occurrences of any character (except newline) in a greedy manner. It matches as many characters as possible to satisfy the overall pattern.
+
+15. What is the syntax for matching both numbers and lowercase letters with a character class?
+To match both numbers (0-9) and lowercase letters (a-z) with a character class, you can use the range notation within square brackets. The syntax is `[0-9a-z]`, which matches any single character that is either a number or a lowercase letter.
+
+16. What is the procedure for making a regular expression case-insensitive?
+To make a regular expression case-insensitive, you can pass the `re.IGNORECASE` or `re.I` flag as the second argument to the `re.compile()` function or when using other regex methods. This flag allows the pattern to match characters in a case-insensitive manner.
+
+17. What does the `.` character normally match? What does it match if `re.DOTALL` is passed as the second argument in `re.compile()`?
+The `.` character in a regular expression normally matches any character except a newline character. It matches alphanumeric characters, symbols, whitespace characters, and so on.
+
+If `re.DOTALL` is passed as the
