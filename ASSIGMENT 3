@@ -1,0 +1,56 @@
+1. Why are functions advantageous to have in your programs?
+Functions are advantageous to have in programs for several reasons:
+- Code organization: Functions allow you to break down your code into smaller, manageable pieces, making it easier to understand and maintain.
+- Code reusability: Once you define a function, you can use it multiple times throughout your program, eliminating the need to duplicate code.
+- Modularity: Functions promote modular programming by encapsulating specific functionality, making it easier to test, debug, and update.
+- Abstraction: Functions hide the implementation details of a particular operation, allowing you to focus on using the function without worrying about how it works internally.
+- Collaboration: Functions enable multiple developers to work on different parts of a program simultaneously, as they can develop and test functions independently.
+
+2. When does the code in a function run: when it's specified or when it's called?
+The code in a function runs when it is called. Function definitions simply define the structure and behavior of a function, but the actual execution of the code inside the function occurs when the function is called in the program.
+
+3. What statement creates a function?
+The `def` statement is used to create a function in Python. It is followed by the function name, parentheses, and a colon. The body of the function, consisting of one or more indented lines, follows the colon.
+
+4. What is the difference between a function and a function call?
+A function is a block of reusable code that performs a specific task. It is defined using the `def` statement and consists of a function name, parameters (optional), and a body of code.
+
+A function call, on the other hand, is the act of invoking a function and executing its code. It involves using the function name followed by parentheses that may contain arguments to be passed to the function. The function call triggers the execution of the code within the function.
+
+In summary, a function is a defined entity that contains code, while a function call is the action of executing that code by invoking the function.
+
+5. How many global scopes are there in a Python program? How many local scopes?
+In a Python program, there is only one global scope. It is the outermost scope that encompasses the entire program.
+
+However, local scopes can be created within functions or other code blocks. Each time a function is called, a new local scope is created. So the number of local scopes depends on the number of function calls and other code blocks that create local scopes.
+
+6. What happens to variables in a local scope when the function call returns?
+When a function call returns, the local variables within that function's scope are destroyed, and their values are no longer accessible. The memory allocated for these variables is released, and the program continues execution in the calling scope.
+
+7. What is the concept of a return value? Is it possible to have a return value in an expression?
+A return value is the value that a function produces and sends back to the caller. It is specified using the `return` statement within the function. When a `return` statement is encountered, the function immediately exits, and the specified value is passed back to the caller.
+
+Yes, it is possible to have a return value in an expression. You can use the return value directly in expressions or assign it to a variable for further use in the program.
+
+8. If a function does not have a return statement, what is the return value of a call to that function?
+If a function does not have a return statement, the return value of a call to that function is `None`. `None` is a special Python object that represents the absence of a value. It is commonly used to indicate that a function does not return any meaningful result.
+
+9. How do you make a function variable refer to the global variable?
+By default, when you create a variable inside a function, it is local to that function and does not affect variables outside of it. However, you can use the `global` keyword to make a function variable refer to a global variable. By explicitly declaring a variable as `global` within the function, any modifications to that variable will affect the global variable with the same name.
+
+10. What is the data type of None?
+The data type of `None` is `NoneType`. It is a special data type in Python that represents the absence of a value.
+
+11. What does the sentence `import areallyourpetsnamederic` do?
+The sentence `import areallyourpetsnamederic` attempts to import a module named "areallyourpetsnamederic". Modules are files containing Python code that can be imported and used in other programs. If a module with that name exists, it will be imported, allowing access to its functions, classes, and variables. If the module doesn't exist or cannot be found, it will raise an ImportError.
+
+12. If you had a `bacon()` feature in a `spam` module, what would you call it after importing `spam`?
+After importing the `spam` module, you can call the `bacon()` feature using the following syntax: `spam.bacon()`. This specifies the module name (`spam`) followed by a dot (`.`) and the function name (`bacon()`).
+
+13. What can you do to save a program from crashing if it encounters an error?
+To save a program from crashing when it encounters an error, you can use exception handling. Placing the potentially error-prone code inside a `try` block allows you to catch and handle any exceptions that occur. By using a combination of `try` and `except` clauses, you can gracefully handle errors and prevent the program from abruptly terminating.
+
+14. What is the purpose of the `try` clause? What is the purpose of the `except` clause?
+The `try` clause is used to enclose a block of code that may raise an exception. It allows you to test a piece of code for potential errors without causing the program to crash. If an exception occurs within the `try` block, the program's execution is immediately transferred to the `except` clause.
+
+The `except` clause is used to define how the program should handle specific exceptions. It specifies the type of exception to catch and the code to execute when that exception occurs. By using multiple `except` clauses, you can handle different types of exceptions separately and provide appropriate error handling or recovery mechanisms.
