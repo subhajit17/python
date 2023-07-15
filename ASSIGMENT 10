@@ -1,0 +1,39 @@
+1. How do you distinguish between `shutil.copy()` and `shutil.copytree()`?
+- `shutil.copy()` is used to copy a single file from a source location to a destination location. It takes two arguments: the path of the source file to be copied and the destination directory or file name where the file will be copied to. It preserves the original file name in the destination.
+
+- `shutil.copytree()` is used to recursively copy an entire directory tree from a source location to a destination location. It takes two arguments: the path of the source directory to be copied and the destination directory where the directory tree will be copied to. It preserves the directory structure and copies all files and subdirectories within the source directory.
+
+2. What function is used to rename files?
+The `os.rename()` function is used to rename files. It takes two arguments: the current path of the file to be renamed and the new name or new path of the file. It can be used to change the name of a file within the same directory or to move the file to a different directory with a new name.
+
+3. What is the difference between the delete functions in the `send2trash` and `shutil` modules?
+- The `send2trash` module provides a function called `send2trash()` that moves a file or directory to the system's trash or recycle bin instead of permanently deleting it. It acts as a safe alternative to directly deleting files, as they can be restored from the trash if needed.
+
+- The `shutil` module does not have a direct delete function. However, it provides a function called `shutil.rmtree()` that can be used to remove an entire directory tree, including all files and subdirectories within it. This operation permanently deletes the files and directories, bypassing the system's trash or recycle bin.
+
+4. `ZipFile` objects have a `close()` method just like `File` objects' `close()` method. What `ZipFile` method is equivalent to `File` objects' `open()` method?
+The `ZipFile` method that is equivalent to `File` objects' `open()` method is `ZipFile.open()`. It is used to open a file inside a ZIP archive and returns a file-like object. This method allows you to read the contents of the specific file within the ZIP archive without extracting the entire archive.
+
+5. Here is an example program that searches a folder tree for files with a certain file extension and copies them to a new folder:
+
+```python
+import os
+import shutil
+
+def search_and_copy_files(source_folder, destination_folder, extension):
+    for root, dirs, files in os.walk(source_folder):
+        for file in files:
+            if file.endswith(extension):
+                source_path = os.path.join(root, file)
+                destination_path = os.path.join(destination_folder, file)
+                shutil.copy(source_path, destination_path)
+
+# Example usage
+source_folder = 'path/to/source/folder'
+destination_folder = 'path/to/destination/folder'
+extension = '.pdf'
+
+search_and_copy_files(source_folder, destination_folder, extension)
+```
+
+In this example, the `search_and_copy_files()` function takes three arguments: the source folder to search in, the destination folder to copy the files to, and the desired file extension. It recursively searches the source folder for files with the specified extension and copies them to the destination folder.
