@@ -1,0 +1,56 @@
+1.A variable of the primitive data type boolean can have two values True and false.Boolean expressions use relational and logical operators.
+
+2.AND, OR, and NOT.
+
+3.True , False , not , and , and or are the only built-in Python Boolean operators.
+
+4. (i) false
+   (ii)True
+   (iii) True
+   (iv) false
+   (v) false
+   (vi) true
+
+5.less than, greater than, less than or equal to, greater than or equal to, equal to, and not equal to.
+
+6.  =:It is used for assigning the value to a variable.
+           ==:It is used for comparing two values. It returns 1 if both the values are equal otherwise returns               0.
+7.The three blocks are everything inside the if statement and the lines print('bacon') and print('ham').
+
+print('eggs')
+if spam > 5:
+    print('bacon')
+else:
+    print('ham')
+print('spam')
+
+8.spam = input()
+
+if spam == 1:
+    print('Hello')
+elif spam == 2:
+    print('Howdy')
+else:
+    print('Greetings!')
+
+9. CTRL + C
+
+10.Break:A break statement in Python alters the flow of a loop by terminating it once a specified condition is met.
+
+Continue: The continue statement in Python is used to skip the remaining code inside a loop for the current iteration only.
+
+11.range(10):generates a list of 10 values, the legal indices for items of a. sequence of length 10.
+   range(0,10):returns a sequence of numbers, starting from 0 by default, and increments by 1 (by default), and stops before a specified number.
+    range(0,10,1):generate list of 10 value gap between the number is 1.
+
+12.for i in range(1,11):
+    print(i)
+
+  i=1
+while i<=10:
+    print(i)
+    i=i+1
+
+13.This function can be called with spam. bacon().
+
+      
