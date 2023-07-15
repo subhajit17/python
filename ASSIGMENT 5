@@ -1,0 +1,34 @@
+1. What does an empty dictionary's code look like?
+An empty dictionary's code is `{}`.
+
+2. What is the value of a dictionary value with the key 'foo' and the value 42?
+The value of a dictionary with the key 'foo' and the value 42 would look like: {'foo': 42}.
+
+3. What is the most significant distinction between a dictionary and a list?
+The most significant distinction between a dictionary and a list is their structure and purpose:
+- Dictionary: A dictionary is an unordered collection of key-value pairs, where each key is unique. It provides a way to store and retrieve data based on keys.
+- List: A list is an ordered collection of elements. It allows for storing multiple values of any data type in a specific order and accessing them by their indices.
+
+4. What happens if you try to access spam['foo'] if spam is {'bar': 100}?
+If you try to access `spam['foo']` and `spam` is {'bar': 100}, it will raise a `KeyError`. This error occurs because the key 'foo' does not exist in the dictionary `spam`. Accessing a non-existent key in a dictionary raises this error.
+
+5. If a dictionary is stored in spam, what is the difference between the expressions 'cat' in spam and 'cat' in spam.keys()?
+If a dictionary is stored in `spam`, the expression `'cat' in spam` checks if the key 'cat' exists in the dictionary `spam`. It returns `True` if the key is present and `False` otherwise.
+
+On the other hand, the expression `'cat' in spam.keys()` also checks if the key 'cat' exists in the dictionary `spam`. It returns the same result as `'cat' in spam`.
+
+6. If a dictionary is stored in spam, what is the difference between the expressions 'cat' in spam and 'cat' in spam.values()?
+If a dictionary is stored in `spam`, the expression `'cat' in spam` checks if the value 'cat' exists in any of the values of the dictionary `spam`. It returns `False` if the value is not found and `True` if it exists.
+
+In contrast, the expression `'cat' in spam.values()` checks if the value 'cat' exists in any of the values of the dictionary `spam`. It returns the same result as `'cat' in spam`.
+
+7. What is a shortcut for the following code?
+```python
+if 'color' not in spam:
+    spam['color'] = 'black'
+```
+A shortcut for the given code is to use the `setdefault()` method of dictionaries:
+```python
+spam.setdefault('color', 'black')
+```
+This method checks if the key 'color' exists in the `spam` dictionary. If it does not exist, it sets the key to the specified default value 'black'. This allows you to set a default value for a key only if it doesn't already exist in the dictionary.
