@@ -1,0 +1,33 @@
+1. Is the Python Standard Library included with PyInputPlus?
+No, the Python Standard Library is not included with PyInputPlus. The Python Standard Library is a collection of modules and packages that come with Python itself and provide a wide range of functionalities. PyInputPlus is a separate third-party library that provides additional features and validation options for taking user input.
+
+2. Why is PyInputPlus commonly imported with `import pyinputplus as pypi`?
+PyInputPlus is commonly imported with the alias `pypi` to make it easier and shorter to reference the library in code. By using the `as` keyword during the import statement, you can specify an alternative name to refer to the library throughout your code. This can make the code more concise and improve readability.
+
+3. How do you distinguish between `inputInt()` and `inputFloat()`?
+The `inputInt()` function is used to accept integer input from the user, while the `inputFloat()` function is used to accept floating-point (decimal) input. The `inputInt()` function will only allow the user to enter whole numbers, whereas the `inputFloat()` function allows the user to enter decimal numbers as well.
+
+4. Using PyInputPlus, how do you ensure that the user enters a whole number between 0 and 99?
+To ensure that the user enters a whole number between 0 and 99 using PyInputPlus, you can use the `inputInt()` function with additional keyword arguments for validation. The following code snippet demonstrates this:
+
+```python
+import pyinputplus as pypi
+
+num = pypi.inputInt(prompt='Enter a number: ', min=0, max=99)
+```
+
+In this example, the `min` argument is set to 0 to specify the minimum allowed value, and the `max` argument is set to 99 to specify the maximum allowed value. If the user enters a number outside this range or a non-integer value, PyInputPlus will re-prompt the user until a valid input is provided.
+
+5. What is transferred to the keyword arguments `allowRegexes` and `blockRegexes`?
+The `allowRegexes` and `blockRegexes` keyword arguments in PyInputPlus allow you to specify regular expressions as patterns to allow or block certain input values. 
+
+- `allowRegexes` accepts a list of regular expression patterns. If any of the patterns match the user's input, it is considered valid.
+- `blockRegexes` accepts a list of regular expression patterns. If any of the patterns match the user's input, it is considered invalid.
+
+By using these arguments, you can define custom rules for what input is allowed or blocked based on pattern matching.
+
+6. If a blank input is entered three times, what does `inputStr(limit=3)` do?
+If a blank input is entered three times when using `inputStr(limit=3)`, PyInputPlus will raise the `ValidationException` and display an error message after the third invalid input. The user will be prompted three times to enter a valid string, and if they fail to provide one within the specified limit, the exception will be raised.
+
+7. If blank input is entered three times, what does `inputStr(limit=3, default='hello')` do?
+If blank input is entered three times when using `inputStr(limit=3, default='hello')`, PyInputPlus will return the default value `'hello'` after the third invalid input. The `limit` argument specifies the maximum number of retries, and the `default` argument provides the fallback value to be returned if the limit is reached. In this case, if the user enters a blank input three times, the `inputStr()` function will return `'hello'` as the default value.
